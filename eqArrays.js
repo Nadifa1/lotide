@@ -9,15 +9,16 @@ const assertEqual = function(actual, expected) {
 
 
 const eqArrays = function(arrOne, arrTwo) {
-  for (var i = 0; i <= arrOne.length; i++) {
-    if (arrOne[i] !== arrTwo[i]) {
-    return false;
+  for (let i = 0; i < arrOne.length; i++) { 
+    if (arrOne.length[i] !== arrTwo.length[i]) {
+    return false; 
   } 
-  }
-return true; 
 }
+return true; 
+}; 
  
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); 
 
 
 

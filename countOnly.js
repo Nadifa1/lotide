@@ -9,18 +9,27 @@ const assertEqual = function(actual, expected) {
 };
 
 const countOnly = function(allItems, itemsToCount) {
- let countedItems = {};
-  for (let index of allItems) {
-    if (itemsToCount[index]) {
-      if (countedItems[index]) {
-        countedItems[index] += 1; 
+  const results = {};
+  //create a new object to put our results in
+  for (const item of allItems) {
+    //loops through the array 
+    if (itemsToCount[item]) {
+      // evaluates if the object has the item from the array
+      if (results[item]) {
+        //if it evaluates to true and the new object already has the item as a key
+        results[item] += 1;
+        //add one to its value
       } else {
-        countedItems[index] = 1; 
-      }}
-     } return countedItems;
-  
-    }; 
-    
+        //if the 1st if statement is true and the item hasn't been logged into the new object yet 
+        results[item] = 1;
+        //assign the key to 1
+      }
+    }
+  return results; 
+  //returns the new object that we've filled with the properties (keys and values)
+}
+}; 
+
     
 // Test scenarios 
 
@@ -42,3 +51,7 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+
+
+    
